@@ -12,9 +12,6 @@
  *
  * NOTE: This example has been completed for you.
 */
-function addNumbers(num1, num2) {
-  return num1 + num2;
-}
 
 // ⭐️ Example Challenge end ⭐️
 
@@ -23,6 +20,9 @@ function addNumbers(num1, num2) {
 // 👇 COMPLETE YOUR WORK BELOW 👇
 // 👇 COMPLETE YOUR WORK BELOW 👇
 
+var sum = new Function('a', 'b', 'return a + b');
+
+console.log(sum(2, 6));
 /**
  * ### Challenge `makePersonObject`
  * 
