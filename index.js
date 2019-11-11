@@ -20,9 +20,7 @@
 // 👇 COMPLETE YOUR WORK BELOW 👇
 // 👇 COMPLETE YOUR WORK BELOW 👇
 
-var sum = new Function('a', 'b', 'return a + b');
 
-console.log(sum(2, 6));
 /**
  * ### Challenge `makePersonObject`
  * 
@@ -39,10 +37,15 @@ console.log(sum(2, 6));
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
+function makePersonObject(5,Naomi,naomi@naomi.com) {
   /* code here */
-}
 
+ const person = {
+   id: 5,
+   name: Naomi,
+   email: naomi@naomi.com
+ }
+ return person; 
 /**
  * ### Challenge `getName`
  * 
