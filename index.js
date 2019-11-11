@@ -37,15 +37,15 @@
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(5,Naomi,naomi@naomi.com) {
+function makePersonObject(objId, objName, objEmail) {
   /* code here */
-
- const person = {
-   id: 5,
-   name: Naomi,
-   email: naomi@naomi.com
- }
- return person; 
+const person = {
+ id: objId,
+ name: objName,
+email: objEmail
+}
+return person;
+}
 /**
  * ### Challenge `getName`
  * 
@@ -60,7 +60,7 @@ function makePersonObject(5,Naomi,naomi@naomi.com) {
  * the returned value should look like `Hello, my name is Leia`.
 */
 function getName(/* code here */) {
-  /* code here */
+  return `Hello, my name is ${objArgument.name}`;
 }
 
 /**
