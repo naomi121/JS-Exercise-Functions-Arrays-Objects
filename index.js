@@ -12,6 +12,11 @@
  *
  * NOTE: This example has been completed for you.
 */
+function exampleFunction(num1, num2) {
+  return num1 + num2;
+}
+
+
 
 // ⭐️ Example Challenge end ⭐️
 
@@ -165,7 +170,7 @@ function getCarInfoByIndex(inventory, carIndex) {
 */
 function getLastCarInfo(inventory) {
   return `This is a ${inventory.slice(-1)[0].car_make} ${inventory.slice(-1)[0].car_model}`;
-  
+
 }
 
 /**
@@ -180,9 +185,14 @@ function getLastCarInfo(inventory) {
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoById(/* code here */) {
-  /* code here */
+function getCarInfoById(inventory, carId) {
+  for(let i = 0; i < inventory.lenth; i++) {
+    if (inventory[i].id === carId) {
+      return `This is a ${inventory[i].car_make}${inventory[i].car_model}`
+    }
+  }
 }
+
 
 /**
  * ### Challenge `sortCarInventory`
@@ -192,9 +202,15 @@ function getCarInfoById(/* code here */) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * sortCarInventory returns an inventory that is sorted by car_model, ascending [A-Z].
 */
-function sortCarInventory(/* code here */) {
-  /* code here */
-}
+function sortCarInventory(inventory) {
+   return inventory.sort((a,b) =>) {
+     if (a.car_model > b.car_model) {
+       return 1
+     } else {
+       return -1
+     }
+     })
+    }
 
 /**
  * ### Challenge `getModelYears`
@@ -205,8 +221,13 @@ function sortCarInventory(/* code here */) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
-function getModelYears(/* code here */) {
-  /* code here */
+function getModelYears(inventory) {
+  let carYears = [];
+
+  for (let i =0; i < inventory.length; i++) {
+    carYears.push(inventory[i].car_year)
+  }
+    return carYears;
 }
 
 /**
@@ -221,9 +242,16 @@ function getModelYears(/* code here */) {
  * with a `car_year` which is at most the given desired max year,
  * in the same order as they appear in the original inventory.
 */
-function getOlderCars(/* code here */) {
-  /* code here */
-}
+function getOlderCars(inventory, maxyear) {
+  let oldCars =[]
+  
+  for (let i = 0; i < inventory.length; i++) {
+    if (inventory[i].car_year <= maxYear) {
+      oldCars.push(inventory[i])
+    }
+  }
+   return oldCars;
+}  
 
 /**
  * ### Challenge `getGermanCars`
@@ -236,9 +264,22 @@ function getOlderCars(/* code here */) {
  * made by either `Audi` or `Mercedes-Benz` or `Volkswagen` or `BMW`,
  * in the same order as they appear in the original inventory.
 */
-function getGermanCars(/* code here */) {
-  /* code here */
-}
+function getGermanCars(inventory) {
+   let germanCars = [];
+   let germanCars = [`Audi`, `Mercdes-Benz`, `Volkswagen` ,`BMW`] ;
+
+   for (let i = 0; i < inventory.length; i++) {
+     if (germanmakes.includs(inventory[i].car_make)) {
+       germanCars.push(inventory[i])
+
+     }
+
+    }
+    return germanCars;
+  }
+
+
+
 
 /**
  * ### Challenge refactor to arrow functions
@@ -258,9 +299,15 @@ function getGermanCars(/* code here */) {
  *   return num * 2
  * }
 */
-const sum = null; // code here!
-const addFive = null; // code here!
-const argTimesTwo = null; // code here!
+const sum = (a, b) => {
+  return a + b;
+} 
+const addFive = (num) => {
+  return num + 5;
+}
+const argTimesTwo = (num) => {
+  return num * 2;
+}
 
 /**
  * ### Challenge `carMaker`
@@ -275,9 +322,17 @@ const argTimesTwo = null; // code here!
  *         (1) causes the odometer in the object to be increased by the distance,
  *         (2) returns the updated value of the `odometer`.
 */
-function carMaker(/* code here */) {
-  /* code here */
+function carMaker(num) {
+  const car = {
+    odometer: num,
+    drive: function (distance) {
+      this.odometer = this.odometer + distance;
+      return this.odometer;
+    }
+  }
+  return car;
 }
+
 
 /// ////// END OF CHALLENGE /////////
 /// ////// END OF CHALLENGE /////////
